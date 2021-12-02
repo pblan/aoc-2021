@@ -3,20 +3,23 @@
 
 #include <util.h>
 
-const std::string FORWARD{"forward"};
-const std::string DOWN{"down"};
-const std::string UP{"up"};
+const char FORWARD{'f'};
+const char DOWN{'d'};
+const char UP{'u'};
 
 static uint32_t task1(std::string filename) {
 
     auto input = Input<std::string>(filename);
 
     int32_t x{0};
-    int32_t z{0};    
+    int32_t z{0};       
+
+    char direction;
+    uint8_t value;
 
     for (size_t i = 0; i < input.size() - 1; i += 2) {
-        auto direction = input[i];
-        auto value = std::stoi(input[i + 1]);
+        direction = input[i][0];
+        value = std::stoi(input[i + 1]);
 
         x += (direction == FORWARD) * value;
         z += (direction == UP) ? -value : ((direction == DOWN) ? value : 0);
@@ -33,9 +36,12 @@ static uint32_t task2(std::string filename) {
     int32_t z{0};    
     int32_t aim{0};    
 
+    char direction;
+    uint8_t value;
+
     for (size_t i = 0; i < input.size() - 1; i += 2) {
-        auto direction = input[i];
-        auto value = std::stoi(input[i + 1]);
+        direction = input[i][0];
+        value = std::stoi(input[i + 1]);
 
         aim += (direction == UP) ? -value : ((direction == DOWN) ? value : 0);
         x += (direction == FORWARD) * value;

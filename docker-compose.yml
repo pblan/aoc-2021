@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  latex:
+    container_name: aoc-2021-cpp
+    image: aoc-2021
+    volumes:
+      # change lines below if necessary
+      - .:/mnt/aoc-2021
+    tty: true
+    restart: always

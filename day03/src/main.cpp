@@ -22,7 +22,7 @@ static uint32_t task1(std::string filename) {
     
     std::string gamma;
     std::string epsilon;
-    for (size_t j = 0; j < input[0].size(); ++i) {
+    for (size_t j = 0; j < input[0].size(); ++j) {
         if (counter[j] > input.size() / 2) {
             gamma += '1';
             epsilon += '0';

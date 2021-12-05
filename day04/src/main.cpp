@@ -58,6 +58,12 @@ int answer(const int board[25], int rounds) {
         if (!board_temp[i])
             sum += board[i];
 
+    std::cout << "Sum: " << sum << std::endl;
+    std::cout << "Rounds: " << rounds << std::endl;
+    std::cout << "Draw: " << draw[rounds - 1] << std::endl;
+
+    std::cout << "Result: " << sum * draw[rounds - 1] << "\n" << std::endl;
+
     return sum * draw[rounds - 1];
 }
 

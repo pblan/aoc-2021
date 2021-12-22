@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 
-inline std::string pass_or_fail(uint32_t answer, uint32_t truth)
+inline std::string pass_or_fail(unsigned long long int answer, unsigned long long int truth)
 {
     return answer == truth ? "PASS" : "FAIL (" + std::to_string(truth) + ")";
 }
